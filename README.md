@@ -8,6 +8,9 @@
 6. call
 7. apply
 8. currying
-9. throttling
-10. debouncing
-11. storage
+9. storage
+
+
+# Done
+1. throttling
+2. debouncing
