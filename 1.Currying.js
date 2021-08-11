@@ -37,3 +37,28 @@ function add(...args) {
         return a;
     }
 }
+
+
+function curry(func) {  // returns the curried function
+
+    return function curried(...args) { // take all or partial argumnets
+        if (args.length >= func.length) {  // if the args passed equals or exceed the params of origional function, call the func with args
+            return func.apply(this, args);
+        } else {
+            return function (...args2) { // return a function that takes the rest of the params left when args does not contain alll params that func needs
+                return curried.apply(this, args.concat(args2));  //this function will combine the args passed and stored in lexical env. and the args of the curried function      }
+            }
+        };
+
+    }
+}
+
+//   function sum(a, b, c) {
+//     return a + b + c;
+//   }
+
+//   let curriedSum = curry(sum);
+
+//   alert( curriedSum(1, 2, 3) ); // 6, still callable normally
+//   alert( curriedSum(1)(2,3) ); // 6, currying of 1st arg
+//   alert( curriedSum(1)(2)(3) ); // 6, full currying
