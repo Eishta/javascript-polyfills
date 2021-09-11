@@ -45,7 +45,7 @@ function curry(func) {  // returns the curried function
         if (args.length >= func.length) {  // if the args passed equals or exceed the params of origional function, call the func with args
             return func.apply(this, args);
         } else {
-            return function (...args2) { // return a function that takes the rest of the params left when args does not contain alll params that func needs
+            return function (...args2) { // return a function that takes the rest of the params left when args does not contain all params that func needs
                 return curried.apply(this, args.concat(args2));  //this function will combine the args passed and stored in lexical env. and the args of the curried function      }
             }
         };

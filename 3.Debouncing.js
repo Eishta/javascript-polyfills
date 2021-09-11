@@ -18,7 +18,7 @@ let debounce = function (fn, delay) {
 
 }
 
-// call getData only when the differene between the 2 key press is greater or eual to 300
+// call getData only when the differene between the 2 key press is greater or equal to 300
 let newFunction = debounce(getData, 300)
 
 
