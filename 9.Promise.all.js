@@ -1,31 +1,26 @@
 // Promise.all is a static method and not a prototype method.
 
-Promise.myPromiseAll = (promises) => {
-    let responses = [];
-    let errorResp = [];
+Promise.myPromiseAll = function (promisesArray) {
+    var output = new Array(promisesArray.length);
+    var counter = 0;
+
     return new Promise((resolve, reject) => {
-        /** Loop over promises array **/
-        promises.forEach(async (singlePromise, i) => {
-            try {
-                /** wait for resolving 1 promise **/
-                let res = await singlePromise;
-                responses.push(res);
-                if (i == promises.length - 1) {
-                    if (errorResp.length > 0) {
-                        reject(errorResp);
-                    } else {
-                        // resolve(esponses)
-                        // To know our cutom promise function returning result
-                        resolve("custom promise ::" + responses);
+        promisesArray.forEach((promise, index) => {
+            Promise.resolve(promise)
+                .then(value => {
+                    output[index] = { state: 'fulfilled', value };
+                    counter = counter + 1;
+                    if (counter === promisesArray.length) {
+                        // all promises resolved, resolve outer promise
+                        resolve(output);
                     }
-                }
-            } catch (err) {
-                errorResp.push(err);
-                reject(err);
-            }
+                })
+                .catch(reason => {
+                    output[index] = { state: 'rejected', reason };
+                }); // reject outer promise immediately, as any promise rejects
         });
     });
-};
+}
 
 let p1 = Promise.resolve("Promise1 resolved");
 
