@@ -37,7 +37,7 @@ const promise2 = new Promise((resolve, reject) => {
 });
 
 
-Promise.race([promise1, promise2]).then((value) => {
+Promise.myRace([promise1, promise2]).then((value) => {
     console.log(value);
     // Both resolve, but promise2 is faster
 });

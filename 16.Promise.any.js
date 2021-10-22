@@ -26,7 +26,7 @@ Promise.myAny = function promiseAny(promisesArray) {
                     counter = counter + 1;
                     if (counter === promisesArray.length) {
                         // all promises rejected, reject outer promise
-                        reject(errorOutput);
+                        reject(new AggregateError('All Promises were rejected'));
                     }
                 });
         });

@@ -1,7 +1,5 @@
 // Link - https://jssaini07.medium.com/understanding-javascript-promises-by-writing-a-polyfill-69c8d51c23b4
 
-import { number } from "prop-types";
-
 // Implementation
 const CustomPromiseState = {
     PENDING: 'PENDIND',
@@ -36,7 +34,7 @@ class CustomPromise {
         this.CustomPromiseState = CustomPromiseState.REJECTED
     }
     then(thenFn) {
-        this.thenFn = thenFn;
+        this.thenFns.push(thenFn);
         return this;
     }
     catch(catchFn) {
