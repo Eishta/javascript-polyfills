@@ -1,0 +1,27 @@
+<!-- https://www.telerik.com/blogs/debouncing-and-throttling-in-javascript -->
+<html>
+  <style>
+    div {
+      border: 1px solid black;
+      width: 300px;
+      height: 200px;
+      overflow: scroll;
+    }
+  </style>
+  <body>
+    <div id="div-body">
+      <p style="background-color: red; height: 700px">This is line 1</p>
+      <p style="background-color: blue; height: 700px">This is line 2</p>
+      <p style="background-color: green; height: 700px">This is line 3</p>
+      <p style="background-color: yellow; height: 700px">This is line 4</p>
+    </div>
+
+    <p>No of times event fired</p>
+    <p id="show-api-call-count"></p>
+
+    <p>No of times throttling executed the method</p>
+    <p id="debounc-count"></p>
+  </body>
+
+  <script src="throttling.js"></script>
+</html>

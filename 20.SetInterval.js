@@ -18,7 +18,7 @@ intervalID = setInterval(greeting, 1000);
 // Hello Eishta3
 
 // Polyfill
-// requirements-> setInterval which will take a acb and delay and return inetrvalID.
+// requirements-> setInterval which will take a callback and delay and return intervalID.
 //             -> clearInterval which will take input = interval id and removes this id from the map that stores the info of the callback;
 
 // we create a function createSetIntervalPolyfill so that we dont pollute the global space
