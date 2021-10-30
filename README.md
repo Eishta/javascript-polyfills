@@ -8,11 +8,11 @@
 6. Array Methods- map, filter, forEach, reduce
 7. deepFreeze Object
 8. How to implement fetch in Node env without using the browser's fetch API
-9. Promise.all
-10.Redux Implementation in Vanilla JS
-11.Array.flat
-12.startsWith
-13.String.includes
+9. Promise.all__
+10.Redux Implementation in Vanilla JS____
+11.Array.flat__
+12.startsWith__
+13.String.includes__
 14.Promise.race
 15.Promise.allSettled
 16.Promise.any
