@@ -1,21 +1,27 @@
 # javascript-polyfills
 
-1. includes
-2. filter
-3. find
-4. every
-5. bind
-6. call
-7. apply
-8. memoise a function (https://javascriptinterviewquestions.com/2020/05/how-to-memoize-any-function-in-javascript.html)
-9. storage
-10. Flatten a nested array (https://javascriptinterviewquestions.com/2020/04/how-to-flatten-nested-array-js-interview-recursion.html)
-11. flatten a nested object
+1. Currying
+2. Debouncing
+3. Throttling
+4. Random
+5. Memoization
+6. Array Methods- map, filter, forEach, reduce
+7. deepFreeze Object
+8. How to implement fetch in Node env without using the browser's fetch API
+9. Promise.all
+10.Redux Implementation in Vanilla JS
+11.Array.flat
+12.startsWith
+13.String.includes
+14.Promise.race
+15.Promise.allSettled
+16.Promise.any
+17.Custom Promise without then chaining
+18.Custom Promise with then chaining
+19.SetTimeOut
+20.SetInterval
+21.requestIdleCallback
+22.querySelectorAll
+23.call, bind and apply
+24.LRU cache
 
-
-
-# Done
-1. throttling
-2. debouncing
-3. currying
-4. random
