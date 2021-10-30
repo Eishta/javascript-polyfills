@@ -23,5 +23,5 @@
 21.requestIdleCallback
 22.querySelectorAll
 23.call, bind and apply
-24.LRU cache
+24.LRU cache 
 
