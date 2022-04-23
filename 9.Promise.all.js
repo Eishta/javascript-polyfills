@@ -7,8 +7,10 @@ Promise.myall = (promises) => {
             try {
                 /** wait for resolving 1 promise **/
                 let res = await singlePromise;
-                responses.push(res);
-                if (i == promises.length - 1) {
+                /** to maintain the order as some promises can resolve immediately and some take time we dont use push instead add res on index **/
+                responses[i]=res;
+                /** when all the promises have resolved, then only the Promise.all resolves with responses array**/
+                if (i == promises.length - 1) {           
                     if (errorResp.length > 0) {
                         reject(errorResp);
                     } else {
@@ -18,6 +20,7 @@ Promise.myall = (promises) => {
                     }
                 }
             } catch (err) {
+                /** if the promise at line 9 is rejected , the code pointer is moved here and rejects immediately **/
                 errorResp.push(err);
                 reject(err);
             }
@@ -77,3 +80,35 @@ Promise.myall([p1, p2]).then(
         console.log("error =>", err);
     }
 );
+
+
+
+// *************** Example 2 ************************
+function delay(time, value) {
+  return new Promise(function(resolve) {
+    setTimeout(resolve, time, value)
+  })
+}
+// 1.)
+Promise.myall([
+  delay(100, 'a'),
+  delay(200, 'b'),
+  delay(50, 'c'),
+  delay(1000, 'd')
+])
+.then(console.log, console.error)
+
+// output:  ['a', 'b', 'c', 'd']
+
+// 2.)
+
+Promise.myall([
+  delay(100, 'a'),
+  delay(200, 'b'),
+  Promise.reject(Error('bad things happened')),
+  delay(50, 'c'),
+  delay(1000, 'd')
+])
+.then(console.log, console.error);
+
+// output: Error: bad things happened
