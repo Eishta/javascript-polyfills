@@ -38,35 +38,35 @@ let p2 = new Promise((resolve, reject) => {
 // output -> ['Promise1 resolved', 'Promise 2 resolved after 2 seconds']
 
 // Case II - first reject
-let p1 = Promise.reject("Promise1 resolved");
+let p1 = Promise.reject("Promise1 rejected");
 
 let p2 = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve("Promise 2 resolved after 2 seconds");
     }, 1000);
 });
-// output => error => Promise1 resolved
+// output => error => Promise1 rejected
 
 // Case III - second reject
 let p1 = Promise.resolve("Promise1 resolved");
 
 let p2 = new Promise((resolve, reject) => {
     setTimeout(() => {
-        reject("Promise 2 resolved after 2 seconds");
+        reject("Promise 2 rejected after 2 seconds");
     }, 1000);
 });
-// output => error => Promise 2 resolved after 2 seconds
+// output => error => Promise 2 rejected after 2 seconds
 
 // Case IV - both reject
-let p1 = Promise.reject("Promise1 resolved");
+let p1 = Promise.reject("Promise1 rejected");
 
 let p2 = new Promise((resolve, reject) => {
     setTimeout(() => {
-        reject("Promise 2 resolved after 2 seconds");
+        reject("Promise 2 rejected after 2 seconds");
     }, 1000);
 });
 
-// output => error => Promise1 resolved
+// output => error => Promise1 rejected
 
 Promise.myall([p1, p2]).then(
     (res) => {
