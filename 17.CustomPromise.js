@@ -1,5 +1,8 @@
 // Link - https://jssaini07.medium.com/understanding-javascript-promises-by-writing-a-polyfill-69c8d51c23b4
 
+// 1. when we create a promise , we send a function ref to Promise constructor
+// 2. a Promise has a resolve , reject function which take some data and pass it to then and catch func.
+// 3. then and catch function on Promise futher takes fn references
 // Implementation
 const CustomPromiseState = {
     PENDING: 'PENDIND',
@@ -30,11 +33,11 @@ class CustomPromise {
     }
     then(thenFn) {
         this.thenFn = thenFn;
-        return this;
+        return this; // return the promise so we can again call .then or catch on it
     }
     catch(catchFn) {
         this.catchFn = catchFn;
-        return this;
+        return this; // return the promise so we can again call .then or catch on it
     }
 }
 

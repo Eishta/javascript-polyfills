@@ -3,7 +3,7 @@
 * The Promise.race() method returns a promise that fulfills or rejects
 *   as soon as one of the promises in an iterable fulfills or rejects,
 *   with the value or reason from that promise.
-* Promise.race takes the first settled(either resolve or reject) Promise whereas Promise.any takes the first fulfilled(only resolved) Promise.
+* Promise.race takes the first settled(either resolve or reject) promise whereas Promise.any takes the first fulfilled(only resolved) promise.
 * input -> iterable
 * output -> pending promise
 * Case I- If the iterable passed is empty, the promise returned will be forever pending.

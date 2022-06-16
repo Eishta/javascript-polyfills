@@ -43,6 +43,7 @@ Array.prototype.myConcat = function (...items) {
     }
     return output;
 }
+
 Array.prototype.myReduce = function (cb, init) {
     let acc = init;
     for (let i = 0; i < this.length; i++) {

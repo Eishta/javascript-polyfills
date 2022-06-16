@@ -8,17 +8,23 @@ String.prototype.myIncludes = function (searchString, pos = 0) {
 
 // test cases
 
+// called with pos
 'hello'.myIncludes('e',3)
 false
 
+// called without pos so now the pos is 0
 'hello'.myIncludes('e')
 true
 
+// called with a char not present in string
 'hello'.myIncludes('z')
 false
 
+// case -> pos is not a number
 'hello'.myIncludes('e', 'e')
 true
 
-'hello'.myIncludes('e', 1000000000000000000000000000)
+// called with extremely big interger
+'hello'.myIncludes('e', 1000000000000000000000000000n)
 false   
+
